@@ -1,7 +1,7 @@
 h1{
-    color: red;
+    color: red; //style for hi
 }
-.completed{
-    text-decoration: line-through;
-    color: gray;
+.completed{ //style for complete class, this will only appear if the item has a class of completed
+    text-decoration: line-through; //strike through to indicate task is done
+    color: gray; //gray out to indicate the task is done
 }
