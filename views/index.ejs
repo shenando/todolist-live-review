@@ -10,25 +10,25 @@
 <body>
     <h1>Todos</h1>
     <ul>
-    <% for(let i = 0; i < zebra.length; i++) { %>
-        <li class='todoItem'>
-            <% if(zebra[i].completed === true) {%>
-            <span class="completed"><%= zebra[i].todo %></span>
-            <% }else{ %>
-            <span><%= zebra[i].todo %></span>
-            <% } %>   
-            <span class='del'> Delete </span>
+    <% for(let i = 0; i < zebra.length; i++) { %> //loop of the todo items
+        <li class='todoItem'> //class for the items
+            <% if(zebra[i].completed === true) {%> //if statement in js that checks if the items have a class of completed, if they do the code below is rendered
+            <span class="completed"><%= zebra[i].todo %></span> //code to style the item with the complete class
+            <% }else{ %> //else statement, this is for all items that do not have a class of completed
+            <span><%= zebra[i].todo %></span> //rendering of todo items that do not have a completed class
+            <% } %>   //end of ejs code
+            <span class='del'> Delete </span> //delete button
         </li>
     <% } %>    
     </ul>
 
-    <h2>Things left to do: <%= left %></h2>
+    <h2>Things left to do: <%= left %></h2> //keeps track of how many total items need to be completed
 
-    <form action="/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
-        <input type="submit">
+    <form action="/createTodo" method='POST'> //form that communicates with the createto post method in server js, it takes user input that needs to be put on the page
+        <input type="text" placeholder="Enter Todo Item" name='todoItem'> //form connected to the item name
+        <input type="submit"> //button for the form
     </form>
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></script> //js script tag
 </body>
 </html>
